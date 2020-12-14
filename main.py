@@ -18,7 +18,7 @@ kindel = str(input("jah või ei:? "))
 
 if kindel == str("ei"):
     tegelasenimi = str(input("Sisestage oma tegelase nimi: "))
-    print("Tee olete muudnud oma tegelase nime,", tegelasenimi)
+    print("Te olete muutnud oma tegelase nime,", tegelasenimi)
     
 print("Palun valige oma tegelasklass:\nRÜÜTEL | VIBUKÜTT | MAAGIAMEISTER")
 tegelasklass = str(input("Tegelasklass: "))
