@@ -32,5 +32,5 @@ with open("komenteeritudajalugu.txt", "w") as outfile:
             if  hist4 == käsk2:
                outfile.write(hist123 + " " + käsk1.split(' ', 1)[1])
             else:
-                waittimer(0.1)
+                waittimer(0.01)
                 print(hist123 + "   ei klapi   " + käsk1)
