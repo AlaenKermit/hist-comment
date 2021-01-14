@@ -1,24 +1,19 @@
 import os
 import time
+def waittimer(x):
+    time.sleep(x)
 print("""
-.▄▄ ·  ▄▄▄·  ▄▄▄· ▄▄▄  ▄▄▄ .• ▌ ▄ ·.  ▄▄▄·  ▄▄▄·     ▄▄▌ ▐ ▄▌ ▄▄▄· ▄▄▄  .▄▄ · 
-▐█ ▀. ▐█ ▀█ ▐█ ▀█ ▀▄ █·▀▄.▀··██ ▐███▪▐█ ▀█ ▐█ ▀█     ██· █▌▐█▐█ ▀█ ▀▄ █·▐█ ▀. 
-▄▀▀▀█▄▄█▀▀█ ▄█▀▀█ ▐▀▀▄ ▐▀▀▪▄▐█ ▌▐▌▐█·▄█▀▀█ ▄█▀▀█     ██▪▐█▐▐▌▄█▀▀█ ▐▀▀▄ ▄▀▀▀█▄
-▐█▄▪▐█▐█ ▪▐▌▐█ ▪▐▌▐█•█▌▐█▄▄▌██ ██▌▐█▌▐█ ▪▐▌▐█ ▪▐▌    ▐█▌██▐█▌▐█ ▪▐▌▐█•█▌▐█▄▪▐█
- ▀▀▀▀  ▀  ▀  ▀  ▀ .▀  ▀ ▀▀▀ ▀▀  █▪▀▀▀ ▀  ▀  ▀  ▀      ▀▀▀▀ ▀▪ ▀  ▀ .▀  ▀ ▀▀▀▀ 
-ver 0.1                                              Allan Kerme;Kristjan Kuus
+Linux käskude ajaloofaili automatiseeritud kommenteerija
+ver 0.1 // Allan Kerme;Kristjan Kuus
 """)
-
-time.sleep(3)
-
-tegelasenimi = str(input("Sisestage oma tegelase nimi: "))
-print("Kas olete kindel, et soovite oma tegelase nimeks panna", (tegelasenimi), "?")
-
-kindel = str(input("jah või ei:? "))
-
-if kindel == str("ei"):
-    tegelasenimi = str(input("Sisestage oma tegelase nimi: "))
-    print("Te olete muutnud oma tegelase nime,", tegelasenimi)
-    
-print("Palun valige oma tegelasklass:\nRÜÜTEL | VIBUKÜTT | MAAGIAMEISTER")
-tegelasklass = str(input("Tegelasklass: "))
+waittimer(3)
+failinimi = str(input("""
+NB: Faili formaat peab olema
+käsk - ### kommentaar
+Sisestage failinimi käskudega: """))
+historyfail = str(input("Sisestage oma history failinimi, mille käsud soovite kommenteerida"))
+historyfailavatud = open(historyfail, encoding="UTF-8")
+failseletustega = open(failinimi, encoding="UTF-8")
+for i in historyfailavatud:
+    esimenesõna = i.split()[1]
+    print(esimenesõna)
