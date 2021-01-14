@@ -1,0 +1,38 @@
+ip - ### näitab ip aadressi
+ls - ### näitab kausta sisu
+clear - ### tühjendab väljndi
+apt-get - ### saab uusi pakette installeerida
+sudo - ### root kasutaja privileegid
+su - ### root kasutaja privileegid
+wget - ### laeb internetist fail alla
+./ - ### käivitusintepretaator
+exit - ### lahkub seansist
+mkdir - ### teeb uue kausta
+mv - ### liigub kausta
+vim - ### tekstiredaktor
+vi - ### tekstiredaktor
+nano - ### tekstiredaktor
+more - ### loeb faili ja väljastab selle ekraanile
+cat - ### loeb faili ja väljastab selle ekraanile
+ssh - ### kasutab ssh protokolli et ühendada teise arvutiga
+scp - ### saab kopeerida ühest arvutist teise faile
+cp - ### kopeerib faile/kauste
+rm - ### saab kustutada faile/kauste
+grep - ### saab otsida erinevaid asju failisüsteemist
+find - ### saab otsida erinevaid asju failisüsteemist
+zip - ### saab pakendada erinevaid faile
+unzip - ### saab lahti pakendada zip faile
+date - ### näitab kuupäeva
+pwd - ### näitab kus kohas sa hetkel oled
+cd - ### läheb kausta
+touch - ### teeb faili
+man - ### avab manuaali selle käsu kohta
+mv - ### liigutab faiili
+echo - ### annab väljundi ja seda saab ka suunata otse faili
+df - ### näitab palju vaba ruumi on kettal
+tar - ### saab tar faile kokku ja lahti pakkida
+uname - ### näitab informatsiooni operatsioonisüsteemi kohta
+chmod - ### muudab privileege failil/kaustal
+hostname - ### näitab masina hostname nime
+ping - ### saadab pakette teise arvutisse
+history - ### näitab käskude kasutuse ajalugu
