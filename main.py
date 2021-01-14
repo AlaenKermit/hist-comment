@@ -5,7 +5,7 @@ def waittimer(x):
     
 print("""
 Linux käskude ajaloofaili automatiseeritud kommenteerija
-ver 0.1 // Allan Kerme;Kristjan Kuus
+ver 0.2 // Allan Kerme;Kristjan Kuus
 """)
 
 #waittimer(3)
@@ -27,8 +27,10 @@ käsufailreadlines = käsufailavatud.readlines()
 with open("komenteeritudajalugu.txt", "w") as outfile:
     for hist1 in historyreadlines:
         hist123 = hist1.strip().rstrip().strip("\n")
+        hist4 = hist123.split(' ', 3)[2]
         for käsk1 in käsufailreadlines:
-            if  hist123[1] ==  len(käsk1[0]):
+            käsk2 = käsk1.split(' ', 1)[0]
+            if  hist4 == käsk2:
                outfile.write(hist123 + käsk1)
             else:
                 print(hist123 + "   ei klapi   " + käsk1)
