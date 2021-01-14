@@ -5,16 +5,15 @@ def waittimer(x):
     
 print("""
 Linux käskude ajaloofaili automatiseeritud kommenteerija
-ver 0.3 // Allan Kerme;Kristjan Kuus
+ver 0.4 // Allan Kerme;Kristjan Kuus
 """)
 
-#waittimer(3)
+waittimer(3)
 
 käsufail= str(input("""
-NB: Faili formaat peab olema
-käsk - ### kommentaar
+NB: Käskude faili formaat peab olema
+`käsk - ### kommentaar`
 Sisestage failinimi käskudega: """))
-
 historyfail = str(input("Sisestage oma history failinimi, mille käsud soovite kommenteerida: "))
 
 historyfailavatud = open(historyfail, encoding="UTF-8")
@@ -33,4 +32,5 @@ with open("komenteeritudajalugu.txt", "w") as outfile:
             if  hist4 == käsk2:
                outfile.write(hist123 + " " + käsk1.split(' ', 1)[1])
             else:
+                waittimer(0.1)
                 print(hist123 + "   ei klapi   " + käsk1)
