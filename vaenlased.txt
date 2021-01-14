@@ -1,6 +1,0 @@
-#NIMI = HP, ATK, DEF
-Kajav Kajakas = [15, 2, 0]
-Hirmus Hobune = [100, 20, 5]
-Rahutu Rästik = [10, 10, 0]
-Suli Sisalik = [5, 2, 10]
-Madal Mutt = [25, 5, 10]
