@@ -1,19 +1,25 @@
-# Autorid: Allan Kerme & Kristjan Kuus, Tartu Kutsehariduskeskus, ITS20
-# Õpetaja tahab, et kommenteeritakse failid millesse väljendatakse
-# Linuxi 'history' käsk. Meie mõtlesime, et me saaks teha automiseeritud
-# skripti, mis teeks seda automaatselt meie eest.
-#
-# Programm küsib kasutajalt
-# * millisest failist lugeda erinevatele käskudele kommentaarid
-# * millise faili sisu hakata kommenteerima (eg history fail)
-# * küsib kasutajalt mis hakkab uueks failinimeks kuhu kirjutatakse
-# kommenteeritud sisu.
-# Versioon 0.5A
-import time # A   e   g
-def waittimer(x): # kerge funtsioon
-    time.sleep(x) #
-
-def mainfunction():
+#########################################################################
+# Autorid: Allan Kerme & Kristjan Kuus, Tartu Kutsehariduskeskus, ITS20##
+# Õpetaja tahab, et kommenteeritakse failid millesse väljendatakse      #
+# Linuxi 'history' käsk. Meie mõtlesime, et me saaks teha automiseeritud#
+# skripti, mis teeks seda automaatselt meie eest.                      ##
+#########################################################################
+# Programm küsib kasutajalt                                      #######
+# * millisest failist lugeda erinevatele käskudele kommentaarid   #####
+# * millise faili sisu hakata kommenteerima (eg history fail)     ####
+# * küsib kasutajalt mis hakkab uueks failinimeks kuhu kirjutatakse##
+# kommenteeritud sisu.                                            ###
+# Versioon 0.6                                                   ####
+#####################################################################
+import time # Aeg                                                 ###
+def waittimer(x): # Ei midagi huvitavat pole öelda selle          ##
+    time.sleep(x) # funktsiooniga.                                ##
+####################################################################
+# Peamine funktsioon, mille ülesandeks on siis võrrelda kahte faili#
+# ja kui käskudefailist leiab vaste, siis ta lisab selle uude faili#
+# koos kommentaariga.                                             ##
+####################################################################
+def mainfunction(): 
     with open(uusfailinimi, "w") as outfile:
         for hist1 in historyreadlines:
             hist123 = hist1.strip().rstrip()
@@ -24,31 +30,55 @@ def mainfunction():
                    outfile.write(hist123 + " " + käsk1.split(' ', 1)[1])
                 else:
                     waittimer(0.01)
-                    print(hist123 + "   ei klapi   " + käsk1)
-                
+                    print(hist123 + "   ei klapi   " + käsk1 + "-ga")
+################################################################
+# Teine funktsioon, mis siis küsib kasutajalt, mis ta uue faili#
+# nimeks soovib, ja kui sisendis on puudu .txt siis lisab      #
+# selle. Kui ei ole puudu, siis jätkab nagu tavaliselt.        #
+################################################################
+def namefunction():
+uusfailinimi = str(input("Mis soovite uue faili nimeks, kuhu kirjutatakse muudatused?: "))
+if uusfailinimi[-4:] == ".txt":
+    print("Failinimi lõpeb .txt-ga, jätkan")
+    mainfunction()
+else:
+    uusfailinimi = uusfailinimi + ".txt"
+    mainfunction()
+
+##########################################                                                         
+# MMb     dMM      dM.     MM MM\      M #
+# MMM.   ,PMM     ,MMb     MM MMM\     M #
+# M`Mb   d'MM     d'YM.    MM M\MM\    M #
+# M YM. ,P MM    ,P `Mb    MM M \MM\   M #
+# M `Mb d' MM    d'  YM.   MM M  \MM\  M #
+# M  YM.P  MM   ,P   `Mb   MM M   \MM\ M #
+# M  `Mb'  MM   d'    YM.  MM M    \MM\M #
+# M   YP   MM  ,MMMMMMMMb  MM M     \MMM #
+# M   `'   MM  d'      YM. MM M      \MM #
+# M        MM dM       dMM MM M       \M #
+##########################################
+
+#Lihtsalt visuaalne asjake alguses
 print("""
 Linux käskude ajaloofaili automatiseeritud kommenteerija
-ver 0.5A // Allan Kerme;Kristjan Kuus
+ver 0.6 // Allan Kerme;Kristjan Kuus
 """)
 
-waittimer(2)
+waittimer(1)
 
 käsufail= str(input("""
 NB: Käskude faili formaat peab olema
 `käsk - ### kommentaar`
 Sisestage failinimi käskudega: """))
+##############################################################################
+#History failinime päring, mida kasutaja soovib kommenteerida
 historyfail = str(input("Sisestage oma history failinimi, mille käsud soovite kommenteerida: "))
-
+##############################################################################
+#Avame history & käsufailid, võtame nendes olevad read ja paneme need kinni
 historyfailavatud = open(historyfail, encoding="UTF-8")
-
 käsufailavatud = open(käsufail, encoding="UTF-8")
-
 historyreadlines = historyfailavatud.readlines()
 käsufailreadlines = käsufailavatud.readlines()
-uusfailinimi = str(input("Mis soovite uue faili nimeks, kuhu kirjutatakse muudatused?: "))
-if uusfailinimi[-4:] == ".txt":
-    print("Leidsin .txt lõpu failist, jätkan")
-    mainfunction()
-else:
-    uusfailinimi = uusfailinimi + ".txt"
-    mainfunction()
+historyfailavatud.close()
+käsufailavatud.close()
+namefunction()
