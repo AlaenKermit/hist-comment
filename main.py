@@ -1,8 +1,8 @@
 ##################################################################################
 #                                                                                #
-# Autorid: Allan Kerme & Kristjan Kuus, Tartu Kutsehariduskeskus, ITS20          #
+# Autorid: Allan Kerme & Kristjan Kuus | Tartu Kutsehariduskeskus | ITS20        #
 # Õpetaja tahab, et kommenteeritakse failid millesse suunatakse                  #
-# Linuxi 'history' käsu väljund. Meie mõtlesime, et me saaks teha automiseeritud #
+# Linuxi 'history' käsu väljund. Meie mõtlesime, et me saaks teha                #
 # skripti, mis teeks seda automaatselt meie eest.                                #
 #                                                                                #
 ##################################################################################
@@ -12,7 +12,7 @@
 # * millise faili sisu hakata kommenteerima (eg history fail)       #
 # * küsib kasutajalt mis hakkab uueks failinimeks kuhu kirjutatakse #
 # kommenteeritud sisu.                                              #
-# Versioon 0.6.2                                                    #
+# Versioon 0.7.0                                                    #
 #                                                                   #
 #####################################################################
 #                                       #
@@ -29,15 +29,15 @@ def waittimer(x): # Ei midagi huvitavat pole öelda selle
 # koos kommentaariga.                                               #
 #                                                                   #
 #####################################################################
-def mainfunction():
-    with open(uusfailinimi, "w") as outfile:
+def mainfunction(x):
+    with open(x, "w") as outfile:
         for hist1 in historyreadlines:
             hist123 = hist1.strip().rstrip()
             hist4 = hist123.split(' ', 3)[2]
             for käsk1 in käsufailreadlines:
                 käsk2 = käsk1.split(' ', 1)[0]
                 if  hist4 == käsk2:
-                   outfile.write(hist123 + " " + käsk1.split(' ', 1)[1])
+                    outfile.write(hist123 + " " + käsk1.split(' ', 1)[1])
                 else:
                     waittimer(0.01)
                     print(hist123 + "   ei klapi   " + käsk1 + "-ga")
@@ -49,13 +49,13 @@ def mainfunction():
 #                                                               #
 #################################################################
 def namefunction():
-uusfailinimi = str(input("Mis soovite uue faili nimeks, kuhu kirjutatakse muudatused?: "))
-if uusfailinimi[-4:] == ".txt":
-    print("Failinimi lõpeb .txt-ga, jätkan")
-    mainfunction()
-else:
-    uusfailinimi = uusfailinimi + ".txt"
-    mainfunction()
+    uusfailinimi = str(input("Mis soovite uue faili nimeks, kuhu kirjutatakse muudatused?: "))
+    if uusfailinimi[-4:] == ".txt":
+        print("Failinimi lõpeb .txt-ga, jätkan")
+        mainfunction(uusfailinimi)
+    else:
+        uusfailinimi += ".txt"
+        mainfunction(uusfailinimi)
 
 ##############################################
 # MMb     dMM      dM.       MM   MM\      M #
@@ -75,7 +75,7 @@ else:
 ######################################
 print("""
 Linux käskude ajaloofaili automatiseeritud kommenteerija
-Versioon 0.6.2 // Allan Kerme;Kristjan Kuus
+Versioon 0.7.0 // Allan Kerme | Kristjan Kuus
 """)
 
 waittimer(1)
