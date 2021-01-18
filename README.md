@@ -13,3 +13,5 @@ Programm küsib kasutajalt
 * millise faili sisu hakata kommenteerima (eg history fail)
 * küsib kasutajalt mis hakkab uueks failinimeks kuhu kirjutatakse kommenteeritud sisu.
 Versioon 0.6b
+
+Failid 'käsud.txt' & 'history.txt' on lisatud lihtsalt näitena.
