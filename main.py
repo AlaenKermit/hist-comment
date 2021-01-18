@@ -12,7 +12,7 @@
 # * millise faili sisu hakata kommenteerima (eg history fail)       #
 # * küsib kasutajalt mis hakkab uueks failinimeks kuhu kirjutatakse #
 # kommenteeritud sisu.                                              #
-# Versioon 0.6b                                                     #
+# Versioon 0.6.2                                                    #
 #                                                                   #
 #####################################################################
 #                                       #
@@ -75,7 +75,7 @@ else:
 ######################################
 print("""
 Linux käskude ajaloofaili automatiseeritud kommenteerija
-Versioon 0.6b // Allan Kerme;Kristjan Kuus
+Versioon 0.6.2 // Allan Kerme;Kristjan Kuus
 """)
 
 waittimer(1)
