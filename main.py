@@ -1,6 +1,5 @@
 ##################################################################################
 #                                                                                #
-# Autorid: Allan Kerme & Kristjan Kuus | Tartu Kutsehariduskeskus | ITS20        #
 # Õpetaja tahab, et kommenteeritakse failid millesse suunatakse                  #
 # Linuxi 'history' käsu väljund. Meie mõtlesime, et me saaks teha                #
 # skripti, mis teeks seda automaatselt meie eest.                                #
